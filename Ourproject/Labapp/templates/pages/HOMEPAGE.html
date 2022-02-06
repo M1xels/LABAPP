@@ -1,0 +1,2314 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UITC Laboratory Monitoring</title>
+    <link rel="icon" href="{% static 'Media/TUPLOGO.png' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/homepage.css' %}">
+    <script src="{% static 'JS/hp.js' %}"></script>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    
+</head>
+<body>
+  <!---------------------------------------------------------------------------------------NAVBAR PART----------------------------------------------------------------------------------------------------------->
+  
+  
+  <div class="menu-bar">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+        <a class="navbar-brand" href="#"><img src="{% static 'Media/TUPLOGO.png' %}" alt="image">UITC LABORATORY </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#greennavbar" aria-controls="greennavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+      
+        <div class="collapse navbar-collapse" id="greennavbar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link " href="#">Home Page <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle van" href="#" id="dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Reports
+                </a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="{% url 'hardware' %}">Hardware</a>
+                  <a class="dropdown-item" href="{% url 'software' %}">Software</a>
+                </div>
+            </li>
+
+            <li>
+              <a class="nav-link van" href="#" data-toggle="modal" data-target="#MODAL1">Help</a>
+            </li>
+            
+          <li class="nav-item">
+              <a class="nav-link van" href="{% url 'index' %}">Logout</a>
+            </li>
+             
+          </ul>
+          
+        </div>
+    </nav>
+
+
+
+
+
+
+
+    <!---------------------------------------------------------------------------------------MODAL help-------------------------------------------------------------------------------------------------------------------->
+    <div class="modal fade" id="MODAL1" tabindex="-1" role="dialog" aria-labelledby="MODAL1Title" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="MODAL1S">What to do in Home Page??</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <!---------------------------------------------------------------------------------------MODAL REMINDER-------------------------------------------------------------------------------------------------------------------->
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+    <!---------------------------------------------------------------------------------------MODAL 1 PART----------------------------------------------------------------------------------------------------------->        
+<div class="modal fade" id="dom1" tabindex="-1" role="dialog" aria-labelledby="dom1Title" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title" id="MODAL2">Notification</h6>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you Sure on your choices?? wehh
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" id="y1" onclick="yes1()">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!---------------------------------------------------------------------------------------MODAL 1.2 PART----------------------------------------------------------------------------------------------------------->        
+<div class="modal fade" id="dom1.2" tabindex="-1" role="dialog" aria-labelledby="dom1.2Title" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title" id="MODAL2">Notification</h6>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you Sure on your choices??
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal"  onclick="sey1()"  >Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!---------------------------------------------------------------------------------------MODAL 2 PART----------------------------------------------------------------------------------------------------------->        
+<div class="modal fade" id="dom2" tabindex="-1" role="dialog" aria-labelledby="dom2Title" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title" id="MODAL2">Notification</h6>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you Sure on your choices??
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="yes2()" >Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!---------------------------------------------------------------------------------------MODAL 2.2 PART----------------------------------------------------------------------------------------------------------->        
+<div class="modal fade" id="dom2.2" tabindex="-1" role="dialog" aria-labelledby="dom2.2Title" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title" id="MODAL2">Notification</h6>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you Sure on your choices??
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal"  onclick="sey2()">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!---------------------------------------------------------------------------------------MODAL 3 PART----------------------------------------------------------------------------------------------------------->        
+<div class="modal fade" id="dom3" tabindex="-1" role="dialog" aria-labelledby="dom3Title" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title" id="MODAL2">Notification</h6>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you Sure on your choices??
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="yes3()" >Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!---------------------------------------------------------------------------------------MODAL3.2 PART----------------------------------------------------------------------------------------------------------->        
+<div class="modal fade" id="dom3.2" tabindex="-1" role="dialog" aria-labelledby="dom3.2Title" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title" id="MODAL2">Notification</h6>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you Sure on your choices??
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal"  onclick="sey3()">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!---------------------------------------------------------------------------------------MODAL 4 PART----------------------------------------------------------------------------------------------------------->        
+<div class="modal fade" id="dom4" tabindex="-1" role="dialog" aria-labelledby="dom4Title" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title" id="MODAL2">Notification</h6>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you Sure on your choices??
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="yes4()"  >Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!---------------------------------------------------------------------------------------MODAL 4.2 PART----------------------------------------------------------------------------------------------------------->        
+<div class="modal fade" id="dom4.2" tabindex="-1" role="dialog" aria-labelledby="dom4.2Title" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title" id="MODAL2">Notification</h6>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you Sure on your choices??
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal"  onclick="sey4()">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+   
+    
+  <!-----------------------------------------------------------------------------------------BG PART----------------------------------------------------------------------------------------------------------->
+  </div>  
+  <div class="color-overlay"> </div>
+  <div id="pic" class="view drk ">
+    <div class="color-overlay"> </div>
+  <!---------------------------------------------------------------------------------------BUTTONS PART----------------------------------------------------------------------------------------------------------->
+    <div class="container text-center"><br><br>
+      <div class="Button">
+          <button class="btn  btn-lg p-1" id="b1"> 
+          
+          <img class="pic" src="{% static 'Media/desktop-computer.png' %}" alt="image" ><br><h6 class="f">Laboratory 1</h6></button>
+
+
+          <button class="btn  btn-lg p-1" id="b2"> 
+          
+          <img class="pic" src="{% static 'Media/desktop-computer.png' %}" alt="image"><br><h6 class="f">Laboratory 2</h6></button>
+
+
+          <button class="btn  btn-lg p-1 b1" id="b3">
+          
+          <img class="pic" src="{% static 'Media/desktop-computer.png' %}" alt="image"><br><h6 class="f">Laboratory 3</h6></button>
+
+
+          <button class="btn  btn-lg p-1 "id="b4" >   
+          
+          <img class="pic" src="{% static 'Media/desktop-computer.png' %}" alt="image"><br><h6 class="f">Laboratory 4</h6></button>
+
+
+  <!---------------------------------------------------------------------------------------CARD TABLE 1 PART----------------------------------------------------------------------------------------------------------->        
+    </div> <br>
+    <div  id="fdata1" >
+      <div class="card"  >
+        <div class="card-header">
+          LABORATORY 1
+        </div>
+        <div class="card-body">
+          <div class="card-title">
+            <form>
+              <div class="form-row" id="I1">
+                <div class="col-5 p-1">
+                  <input type="text" class="form-control" placeholder="Input Year, Course, and Section" id="t11" onclick="disable1()" onkeyup="isEmpty1()">
+                </div>
+                <div class="col">
+                </div>
+                <div class="col-4 p-1">
+                  <input type="date" class="form-control d" id="t12" onkeyup="isEmpty1()">
+                </div>
+                
+              </div> 
+              </form>
+              <form>
+                <div class="form-row">
+                  <div class="col">
+                  </div>
+                  <div class="col-1 p-1">
+                    <p>TIME IN:</p>
+                  </div> 
+                  <div class="col-3 p-1">
+                    <input type="time" class="form-control"  id="t13" onkeyup="isEmpty1()">
+                  </div>
+
+                </div> 
+              </form>
+              <form>
+                <div class="form-row">
+                  <div class="col">
+                  </div>
+                  <div class="col-1 p-1">
+                    <p id="to1">TIME OUT:</p>
+                  </div> 
+                  <div class="col-3 p-1">
+                    <input type="time" class="form-control" id="t14" disabled="disabled" onkeyup="isEmpty1()">
+                  </div>
+                </div> 
+              </form>
+              <form>
+                <div class="form-row">
+                  <div class="col">
+                  </div>
+                  <div class="col" >
+                    <button type="button" class="btn btn-primary ha m"  id="s11" disabled="disabled" data-toggle="modal" data-target="#dom1.2" >Submit</button>
+                  </div> 
+                
+                </div> 
+              </form>
+          </div>
+
+          <div class="table-responsive" id="table1" > 
+            <table class="table table-striped table-dark">
+              <thead>
+                <tr>
+                  <th scope="col">PC no.</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">PC no.</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>
+                    <select class="form-control form-control-sm"  disabled="disabled" id="ta1" > 
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                  <th scope="row">2</th>
+                  <td>
+                    <select class="form-control form-control-sm"  disabled="disabled" id="ta2">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>
+                    <select class="form-control form-control-sm"disabled="disabled" id="ta3">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                  <th scope="row">4</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta4">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">5</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta5">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                  <th scope="row">6</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta6">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">7</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta7">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                  <th scope="row">8</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta8">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">9</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta9">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">10</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta10">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">11</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta11">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">12</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta12">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">13</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta13">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">14</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta14">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">15</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta15">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">16</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta16">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">17</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta17">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">18</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta18">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">19</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta19">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">20</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta20">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">21</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta21">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">22</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta22">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">23</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta23">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">24</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta24">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">25</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta25">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">26</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta26">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">27</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta27">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">28</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta28">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">29</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta29">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">30</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta30">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">31</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta31">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">32</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta32">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">33</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta33">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">34</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta34">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">35</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta35">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">36</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta36">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">37</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta37">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">38</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta38">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">39</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta39">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">40</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta40">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">41</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta41">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">42</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta42">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">43</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta43">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">44</th>
+                  <td>
+                    <select class="form-control form-control-sm"disabled="disabled" id="ta44">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">45</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta45">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">46</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta46">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">47</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta47">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">48</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta48">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">49</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta49">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">50</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="ta50">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+              
+              </tbody>
+            </table>
+          </div>
+          <p class="card-text">Check it properly before you live it.</p>
+          <button type="submit" class="btn btn-primary ha m"  id="s12" disabled="disabled" data-toggle="modal" data-target="#dom1">Submit</button>
+          <button type="button" class="btn btn-danger ha m"  id="s13" disabled="disabled"  >Cancel</button>
+        </div>
+      </div> 
+    </div> 
+
+<!---------------------------------------------------------------------------------------CARD TABLE 2 PART----------------------------------------------------------------------------------------------------------->
+
+    <div class="collapse "id="fdata2" >
+      <div class="card" >
+        <div class="card-header">
+          LABORATORY 2
+        </div>
+        <div class="card-body">
+          <div class="card-title">
+            <form>
+              <div class="form-row">
+                <div class="col-5 p-1">
+                  <input type="text" class="form-control" placeholder="Input Year, Course, and Section" id="t21" onclick="disable2()" onkeyup="isEmpty2()">
+                </div>
+                <div class="col">
+                </div>
+                <div class="col-4 p-1">
+                  <input type="date" class="form-control" id="t22" onkeyup="isEmpty2()">
+                </div>
+                
+              </div> 
+              </form>
+              <form>
+                <div class="form-row">
+                  <div class="col">
+                  </div>
+                  <div class="col-1 p-1">
+                    <p>TIME IN:</p>
+                  </div> 
+                  <div class="col-3 p-1">
+                    <input type="time" class="form-control"id="t23" onkeyup="isEmpty2()" >
+                  </div>
+
+                </div> 
+              </form>
+              <form>
+                <div class="form-row">
+                  <div class="col">
+                  </div>
+                  <div class="col-1 p-1">
+                    <p id="to2">TIME OUT:</p>
+                  </div> 
+                  <div class="col-3 p-1">
+                    <input type="time" class="form-control" id="t24" disabled="disabled" onkeyup="isEmpty2()">
+                  </div>
+                </div> 
+              </form>
+              <form>
+                <div class="form-row">
+                  <div class="col">
+                  </div>
+                  <div class="col">
+                    <button type="button" class="btn btn-primary ha m"  id="s21" disabled="disabled" data-toggle="modal" data-target="#dom2.2" >Submit</button>
+                  </div> 
+                
+                </div> 
+              </form>
+          </div>
+          <div class="table-responsive" id="table2">
+            <table class="table table-striped table-dark">
+              <thead class="thead">
+                <tr>
+                  <th scope="col">PC no.</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">PC no.</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>
+                    <select class="form-control form-control-sm"  disabled="disabled" id="tb1" > 
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                  <th scope="row">2</th>
+                  <td>
+                    <select class="form-control form-control-sm"  disabled="disabled" id="tb2">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>
+                    <select class="form-control form-control-sm"disabled="disabled" id="tb3">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                  <th scope="row">4</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb4">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">5</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb5">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                  <th scope="row">6</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb6">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">7</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb7">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                  <th scope="row">8</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb8">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">9</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb9">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">10</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb10">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">11</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb11">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">12</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb12">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">13</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb13">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">14</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb14">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">15</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb15">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">16</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb16">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">17</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb17">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">18</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb18">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">19</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb19">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">20</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb20">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">21</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb21">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">22</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb22">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">23</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb23">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">24</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb24">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">25</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb25">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">26</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb26">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">27</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb27">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">28</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb28">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">29</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb29">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">30</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb30">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">31</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb31">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">32</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb32">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">33</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb33">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">34</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb34">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">35</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb35">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">36</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb36">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">37</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb37">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">38</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb38">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">39</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb39">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">40</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb40">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">41</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb41">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">42</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb42">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">43</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb43">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">44</th>
+                  <td>
+                    <select class="form-control form-control-sm"disabled="disabled" id="tb44">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">45</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb45">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">46</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb46">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">47</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb47">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">48</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb48">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">49</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb49">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                      
+                    </select>
+                  </td>
+                  <th scope="row">50</th>
+                  <td>
+                    <select class="form-control form-control-sm" disabled="disabled" id="tb50">
+                      <option value="default">Available</option>
+                      <option>Occupied</option>\
+                    </select>
+                  </td>
+                </tr>
+              
+              </tbody>
+            </table>
+
+          </div>
+          <p class="card-text">Check it properly before you live it.</p>
+          <button type="submit" class="btn btn-primary ha m"  id="s22" disabled="disabled" data-toggle="modal" data-target="#dom2" >Submit</button>
+          <button type="button" class="btn btn-danger ha m"  id="s23" disabled="disabled"  >Cancel</button>
+      </div> 
+    </div>
+
+
+  <!------------------------------------------------------------------------------------COLOR OVERLAY PART----------------------------------------------------------------------------------------------------------->
+    
+  </div>
+  
+
+<!---------------------------------------------------------------------------------------CARD TABLE 3 PART----------------------------------------------------------------------------------------------------------->
+  <div class="collapse "id="fdata3" >
+    <div class="card" >
+      <div class="card-header">
+        LABORATORY 3
+      </div>
+      <div class="card-body">
+        <div class="card-title">
+          <form>
+            <div class="form-row">
+              <div class="col-5 p-1">
+                <input type="text" class="form-control" placeholder="Input Year, Course, and Section" id="t31" onclick="disable3()" onkeyup="isEmpty3()">
+              </div>
+              <div class="col">
+              </div>
+              <div class="col-4 p-1">
+                <input type="date" class="form-control" id="t32" onkeyup="isEmpty3()">
+              </div>
+              
+            </div> 
+            </form>
+            <form>
+              <div class="form-row">
+                <div class="col">
+                </div>
+                <div class="col-1 p-1">
+                  <p>TIME IN:</p>
+                </div> 
+                <div class="col-3 p-1">
+                  <input type="time" class="form-control"id="t33" onkeyup="isEmpty3()" >
+                </div>
+ 
+              </div> 
+            </form>
+            <form>
+              <div class="form-row">
+                <div class="col">
+                </div>
+                <div class="col-1 p-1">
+                  <p id="to3">TIME OUT:</p>
+                </div> 
+                <div class="col-3 p-1">
+                  <input type="time" class="form-control" id="t34" disabled="disabled" onkeyup="isEmpty3()">
+                </div>
+              </div> 
+            </form>
+            <form>
+              <div class="form-row">
+                <div class="col">
+                </div>
+                <div class="col">
+                  <button type="button" class="btn btn-primary ha m"  id="s31" disabled="disabled" data-toggle="modal" data-target="#dom3.2" >Submit</button>
+                </div> 
+              
+              </div> 
+            </form>
+        </div>
+        <div class="table-responsive" id="table3">
+          <table class="table table-striped table-dark">
+            <thead class="thead">
+              <tr>
+                <th scope="col">PC no.</th>
+                <th scope="col">Status</th>
+                <th scope="col">PC no.</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>
+                  <select class="form-control form-control-sm"  disabled="disabled" id="tc1" > 
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                  </select>
+                </td>
+                <th scope="row">2</th>
+                <td>
+                  <select class="form-control form-control-sm"  disabled="disabled" id="tc2">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>
+                  <select class="form-control form-control-sm"disabled="disabled" id="tc3">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                  </select>
+                </td>
+                <th scope="row">4</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc4">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc5">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                  </select>
+                </td>
+                <th scope="row">6</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc6">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">7</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc7">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                  </select>
+                </td>
+                <th scope="row">8</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc8">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">9</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc9">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                    
+                  </select>
+                </td>
+                <th scope="row">10</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc10">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">11</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc11">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                    
+                  </select>
+                </td>
+                <th scope="row">12</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc12">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">13</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc13">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                    
+                  </select>
+                </td>
+                <th scope="row">14</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc14">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">15</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc15">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                    
+                  </select>
+                </td>
+                <th scope="row">16</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc16">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">17</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc17">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                    
+                  </select>
+                </td>
+                <th scope="row">18</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc18">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">19</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc19">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                    
+                  </select>
+                </td>
+                <th scope="row">20</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc20">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">21</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc21">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                    
+                  </select>
+                </td>
+                <th scope="row">22</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc22">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">23</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc23">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                    
+                  </select>
+                </td>
+                <th scope="row">24</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc24">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">25</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc25">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                    
+                  </select>
+                </td>
+                <th scope="row">26</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc26">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">27</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc27">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                    
+                  </select>
+                </td>
+                <th scope="row">28</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc28">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">29</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc29">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                    
+                  </select>
+                </td>
+                <th scope="row">30</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc30">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">31</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc31">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                    
+                  </select>
+                </td>
+                <th scope="row">32</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc32">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">33</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc33">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                    
+                  </select>
+                </td>
+                <th scope="row">34</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc34">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">35</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc35">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                    
+                  </select>
+                </td>
+                <th scope="row">36</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc36">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">37</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc37">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                    
+                  </select>
+                </td>
+                <th scope="row">38</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc38">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">39</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc39">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                    
+                  </select>
+                </td>
+                <th scope="row">40</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc40">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">41</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc41">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                    
+                  </select>
+                </td>
+                <th scope="row">42</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc42">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">43</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc43">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                    
+                  </select>
+                </td>
+                <th scope="row">44</th>
+                <td>
+                  <select class="form-control form-control-sm"disabled="disabled" id="tc44">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">45</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc45">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                    
+                  </select>
+                </td>
+                <th scope="row">46</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc46">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">47</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc47">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                    
+                  </select>
+                </td>
+                <th scope="row">48</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc48">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">49</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc49">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                    
+                  </select>
+                </td>
+                <th scope="row">50</th>
+                <td>
+                  <select class="form-control form-control-sm" disabled="disabled" id="tc50">
+                    <option value="default">Available</option>
+                    <option>Occupied</option>\
+                  </select>
+                </td>
+              </tr>
+            
+            </tbody>
+          </table>
+ 
+        </div>
+        <p class="card-text">Check it properly before you live it.</p>
+        <button type="submit" class="btn btn-primary ha m"  id="s32" disabled="disabled" data-toggle="modal" data-target="#dom3" >Submit</button>
+        <button type="button" class="btn btn-danger ha m"  id="s33" disabled="disabled"  >Cancel</button>
+    </div> 
+  </div>
+ 
+ <!---------------------------------------------------------------------------------------CARD TABLE 4 PART----------------------------------------------------------------------------------------------------------->
+</div> <br>
+ <div class="collapse "id="fdata4" >
+  <div class="card" >
+    <div class="card-header">
+      LABORATORY 4
+    </div>
+    <div class="card-body">
+      <div class="card-title">
+        <form>
+          <div class="form-row">
+            <div class="col-5 p-1">
+              <input type="text" class="form-control" placeholder="Input Year, Course, and Section" id="t41" onclick="disable4()" onkeyup="isEmpty4()">
+            </div>
+            <div class="col">
+            </div>
+            <div class="col-4 p-1">
+              <input type="date" class="form-control" id="t42" onkeyup="isEmpty4()" >
+            </div>
+            
+          </div> 
+          </form>
+          <form>
+            <div class="form-row">
+              <div class="col">
+              </div>
+              <div class="col-1 p-1">
+                <p>TIME IN:</p>
+              </div> 
+              <div class="col-3 p-1">
+                <input type="time" class="form-control" id="t43" onkeyup="isEmpty4()">
+              </div>
+
+            </div> 
+          </form>
+          <form>
+            <div class="form-row">
+              <div class="col">
+              </div>
+              <div class="col-1 p-1">
+                <p id="to4">TIME OUT:</p>
+              </div> 
+              <div class="col-3 p-1">
+                <input type="time" class="form-control"id="t44" disabled="disabled" onkeyup="isEmpty4()" >
+              </div>
+            </div> 
+          </form>
+          <form>
+            <div class="form-row">
+              <div class="col">
+              </div>
+              <div class="col">
+                <button type="button" class="btn btn-primary ha m"  id="s41" disabled="disabled" data-toggle="modal" data-target="#dom4.2" >Submit</button>
+              </div> 
+            
+            </div> 
+          </form>
+      </div>
+      <div class="table-responsive" id="table4">
+        <table class="table table-striped table-dark">
+          <thead class="thead">
+            <tr>
+              <th scope="col">PC no.</th>
+              <th scope="col">Status</th>
+              <th scope="col">PC no.</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>
+                <select class="form-control form-control-sm"  disabled="disabled" id="td1" > 
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                </select>
+              </td>
+              <th scope="row">2</th>
+              <td>
+                <select class="form-control form-control-sm"  disabled="disabled" id="td2">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>
+                <select class="form-control form-control-sm"disabled="disabled" id="td3">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                </select>
+              </td>
+              <th scope="row">4</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td4">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td5">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                </select>
+              </td>
+              <th scope="row">6</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td6">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">7</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td7">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                </select>
+              </td>
+              <th scope="row">8</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td8">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">9</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td9">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                  
+                </select>
+              </td>
+              <th scope="row">10</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td10">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">11</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td11">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                  
+                </select>
+              </td>
+              <th scope="row">12</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td12">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">13</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td13">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                  
+                </select>
+              </td>
+              <th scope="row">14</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td14">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">15</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td15">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                  
+                </select>
+              </td>
+              <th scope="row">16</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td16">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">17</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td17">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                  
+                </select>
+              </td>
+              <th scope="row">18</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td18">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">19</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td19">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                  
+                </select>
+              </td>
+              <th scope="row">20</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td20">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">21</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td21">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                  
+                </select>
+              </td>
+              <th scope="row">22</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td22">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">23</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td23">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                  
+                </select>
+              </td>
+              <th scope="row">24</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td24">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">25</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td25">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                  
+                </select>
+              </td>
+              <th scope="row">26</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td26">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">27</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td27">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                  
+                </select>
+              </td>
+              <th scope="row">28</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td28">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">29</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td29">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                  
+                </select>
+              </td>
+              <th scope="row">30</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td30">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">31</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td31">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                  
+                </select>
+              </td>
+              <th scope="row">32</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td32">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">33</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td33">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                  
+                </select>
+              </td>
+              <th scope="row">34</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td34">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">35</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td35">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                  
+                </select>
+              </td>
+              <th scope="row">36</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td36">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">37</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td37">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                  
+                </select>
+              </td>
+              <th scope="row">38</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td38">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">39</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td39">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                  
+                </select>
+              </td>
+              <th scope="row">40</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td40">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">41</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td41">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                  
+                </select>
+              </td>
+              <th scope="row">42</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td42">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">43</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td43">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                  
+                </select>
+              </td>
+              <th scope="row">44</th>
+              <td>
+                <select class="form-control form-control-sm"disabled="disabled" id="td44">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">45</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td45">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                  
+                </select>
+              </td>
+              <th scope="row">46</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td46">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">47</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td47">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                  
+                </select>
+              </td>
+              <th scope="row">48</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td48">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">49</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td49">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                  
+                </select>
+              </td>
+              <th scope="row">50</th>
+              <td>
+                <select class="form-control form-control-sm" disabled="disabled" id="td50">
+                  <option value="default">Available</option>
+                  <option>Occupied</option>\
+                </select>
+              </td>
+            </tr>
+          
+          </tbody>
+        </table>
+
+      </div>
+      <p class="card-text">Check it properly before you live it.</p>
+      <button type="submit" class="btn btn-primary ha m"  id="s42" disabled="disabled" data-toggle="modal" data-target="#dom4" >Submit</button>
+      <button type="button" class="btn btn-danger ha m"  id="s43" disabled="disabled"  >Cancel</button>
+    </div>
+  </div> 
+</div>
+ 
+
+</body>
+</html>

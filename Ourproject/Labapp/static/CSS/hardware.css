@@ -1,0 +1,565 @@
+
+*{
+    margin:0px;
+    padding: 0px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+   
+}
+body{
+    overflow:visible;
+}
+/***************************************************************************************************NAVBAR PART***************************************************************************************************************************/
+
+.navbar-nav{
+    text-align: right;
+    margin-right: 20;
+    
+}
+.navbar .navbar-brand{
+    color: rgb(0, 0, 0);
+    font-size: 40px;
+    -webkit-text-fill-color: rgb(255, 255, 255);
+    -webkit-text-stroke-width:.5px;
+    cursor: pointer;
+}
+.navbar .navbar-toggler{
+    color:rgb(255, 255, 255);
+}
+.navbar-brand img{
+    width: 80px;
+    height: 70px;
+    margin-top: 2px;
+    margin-right: 20px;
+    color: white;
+    font-size: 20px;
+}
+.navbar{
+    background-color:rgb(0, 49, 26)
+
+    ! important;
+    z-index: 2;
+}
+.navbar .navbar-nav li a{
+    color: #fff;
+}
+.nav-link{
+    font-size: 20px;
+    margin: 3px;
+    color: white;
+    font-weight: 500;
+    z-index: 1;
+
+}
+.van:hover{
+    font-weight: 600;
+    border-radius:1cm;
+    border: 1px solid #fff;
+    border-width: auto;
+
+    
+}
+.navbar .nav-item .dropdown-menu .dropdown-item:hover{
+    color : rgb(0, 0, 0)! important;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #fff;
+    border-radius:.5cm;
+    opacity: 1;
+    transition: .2s ease-in;
+    
+}
+.navbar .nav-item .dropdown-menu {
+    color : rgb(0, 0, 0)! important;
+    background-color: rgb(0, 0, 0);
+    border: 1px solid #fff;
+    border-radius:.5cm;
+    opacity: 1;
+    transition: .2s ease-in;
+}
+
+.nav-item-dropdown{
+    background-color: rgb(255, 255, 255);
+    transition: .2s ease-in;
+    
+
+}
+
+.nah{
+    float: left;
+}
+.hah{
+    float: right;
+    padding-left: .2cm;
+    
+}
+
+
+/***************************************************************************************************BUTTONS***************************************************************************************************************************/
+
+
+.container{
+    z-index: 1;
+    
+}
+.btn:hover{
+    font-weight: 600;
+    border: 1px solid #fff;
+    background-color: #47bba2;
+    transition: .2s ease-in;
+}
+.btn{
+    background-color:#720000;
+    color:white;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width:1px;
+    transition: 1s ease-in;
+    cursor: pointer;
+    border-radius:1cm;
+    border: 1px solid #fff;
+    border-width: auto;
+    
+    
+}
+
+
+.card-header{
+    color:rgb(0, 0, 0);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    
+    
+    
+    
+}
+.card-title{
+    color:rgb(0, 0, 0);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12;
+}
+
+.card-text{
+    color:rgb(0, 0, 0);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12;
+    
+}
+
+
+/********************************************************************************************BACKGROUND AND OVERLAY***************************************************************************************************************************/
+
+html,
+body,
+header,
+#pic{height: 1080px; 
+    
+}
+#pic{
+    background-image: url("/static/Media/TUPBGDARK.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;
+    background-attachment: fixed;
+    
+
+}
+.view {
+    background: #000 url("/static/Media/TUPBGDARK.png");
+    color: #fff;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+    position: relative;
+   }
+.color-overlay {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(hsla(152, 51%, 29%, 0.5),hsla(146, 53%, 22%, 0.5) );
+    position: absolute;
+
+   }
+body {
+    --table-width: 100%
+}
+tbody{
+    display: block;
+    max-height: 500px;
+    overflow-y: auto;
+}
+thead, tbody tr{
+    display: table;
+    width: var(--table-width);
+    table-layout: fixed;
+}
+
+
+
+/********************************************************************************************adjust***************************************************************************************************************************/
+
+/*size1*/
+@media only screen and (max-width: 1200px) {
+    .btn{
+        background-color:#0c790e;
+        color:white;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke-width:1px;
+        transition: 1s ease-in;
+        cursor: pointer;
+        border-radius:1cm;
+        border: 1px solid #fff;
+        border-width: auto;
+        width: 140px;
+        display: block;
+        margin: 2px;
+    }
+    .f{
+        font-size: 14px;
+    }
+        
+        
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/********************************************************************************************adjust***************************************************************************************************************************/
+
+
+/*size2*/
+@media only screen and (max-width: 800px) {
+    .navbar .navbar-brand{
+        color: rgb(0, 0, 0);
+        font-size: 22px;
+        -webkit-text-fill-color: rgb(255, 255, 255);
+        -webkit-text-stroke-width:.5px;
+        cursor: pointer;
+    }
+    .btn{
+        background-color:#0c790e;
+        color:white;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke-width:1px;
+        transition: 1s ease-in;
+        cursor: pointer;
+        border-radius:1cm;
+        border: 1px solid #fff;
+        border-width: auto;
+        width: 120px;
+        display: block;
+        margin: 2px;
+        
+    }
+    .Button{
+        font-size: 1px;
+
+        
+    }
+    .f{
+        font-size: 14px;
+    }
+    .card-title{
+        color:rgb(0, 0, 0);
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 10px;
+        
+    }
+    input::placeholder{
+        font-size:10px;
+    }
+    input[type="date"]{
+        font-size:10px;
+        
+    }
+    input[type="time"]{
+        font-size:10px;
+       
+        
+    }
+
+       
+}
+
+
+
+
+
+
+
+
+
+
+/********************************************************************************************adjust***************************************************************************************************************************/
+
+
+/*size3*/
+@media only screen and (max-width: 530px) {
+    .navbar .navbar-brand{
+        color: rgb(0, 0, 0);
+        font-size: 17px;
+        -webkit-text-fill-color: rgb(255, 255, 255);
+        -webkit-text-stroke-width:.5px;
+        cursor: pointer;
+    }
+    .btn{
+        background-color:#0c790e;
+        color:white;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke-width:1px;
+        transition: 1s ease-in;
+        cursor: pointer;
+        border-radius:1cm;
+        border: 1px solid #fff;
+        border-width: auto;
+        width: 100px;
+        height: 89px;
+        display: block;
+        margin: 2px;
+        
+    }
+    .f{
+        font-size: 14px;
+    }
+    .m{
+        width: 80px;
+        height: 40px;
+    }
+        
+   
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+/********************************************************************************************adjust***************************************************************************************************************************/
+
+
+
+/*size4*/
+@media only screen and (max-width: 450px) {
+    .navbar .navbar-brand{
+        color: rgb(0, 0, 0);
+        font-size: 16px;
+        -webkit-text-fill-color: rgb(255, 255, 255);
+        -webkit-text-stroke-width:.5px;
+        cursor: pointer;
+    }
+    .navbar-brand img{
+        width: 50px;
+        height: 40px;
+        margin-top: 2px;
+        margin-right: 20px;
+        color: white;
+        font-size: 14px;
+    }
+    .navbar-toggler{
+        width: 40px;
+        height: 40px;
+    } 
+    .navbar-toggler-icon{
+        margin-left: -8px;
+        
+    }
+    .btn{
+        background-color:#0c790e;
+        color:white;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke-width:1px;
+        transition: 1s ease-in;
+        cursor: pointer;
+        border-radius:1cm;
+        border: 1px solid #fff;
+        border-width: auto;
+        width: 80px;
+        height: 70px;
+        display: block;
+        margin: 2px;
+        
+    }
+    .f{
+        font-size: 11px;
+    }
+    .pic{
+        width: 40px;
+        height: 40px;
+    }
+    .m{
+        width: 80px;
+        height: 40px;
+    }
+}
+
+
+/********************************************************************************************adjust***************************************************************************************************************************/
+
+
+
+
+/*size5*/
+@media only screen and (max-width: 370px) {
+    .navbar .navbar-brand{
+        
+        color: rgb(0, 0, 0);
+        font-size: 13px;
+        -webkit-text-fill-color: rgb(255, 255, 255);
+        -webkit-text-stroke-width:.5px;
+        cursor: pointer;
+    }
+    .navbar-brand img{
+        width: 50px;
+        height: 40px;
+        margin-top: 2px;
+        margin-right: 20px;
+        color: white;
+        font-size: 14px;
+    }
+    .navbar-toggler{
+        width: 35px;
+        height: 40px;
+    }   
+    .navbar-toggler-icon{
+        margin-left: -10px;
+        
+    }
+    .btn{
+        background-color:#0c790e;
+        color:white;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke-width:1px;
+        transition: 1s ease-in;
+        cursor: pointer;
+        border-radius:1cm;
+        border: 1px solid #fff;
+        border-width: auto;
+        width: 60px;
+        height: 50px;
+        display: block;
+        margin: 2px;
+        
+    }
+    .f{
+        font-size: 8px;
+    }
+    .pic{
+        width: 30px;
+        height: 30px;
+    }
+    .m{
+        font-size: 20px;
+        width: 80px;
+        height: 40px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/********************************************************************************************adjust***************************************************************************************************************************/
+
+
+
+
+/*size6*/
+@media only screen and (max-width: 290px) {
+    .navbar .navbar-brand{
+        
+        color: rgb(0, 0, 0);
+        font-size: 13px;
+        -webkit-text-fill-color: rgb(255, 255, 255);
+        -webkit-text-stroke-width:.5px;
+        cursor: pointer;
+    }
+    .navbar-brand img{
+        width: 50px;
+        height: 40px;
+        margin-top: 2px;
+        margin-right: 20px;
+        color: white;
+        font-size: 14px;
+    }
+    .navbar-toggler{
+        width: 35px;
+        height: 40px;
+    }   
+    .navbar-toggler-icon{
+        margin-left: -10px;
+        
+    }
+    .btn{
+        background-color:#0c790e;
+        color:white;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke-width:1px;
+        transition: 1s ease-in;
+        cursor: pointer;
+        border-radius:1cm;
+        border: 1px solid #fff;
+        border-width: auto;
+        width: 80px;
+        height: 60px;
+        display: block;
+        margin: 2px;
+        
+    }
+    .f{
+        font-size: 10px;
+    }
+    .pic{
+        width: 30px;
+        height: 30px;
+    }
+    .table{
+        width: 30px;
+        height: 30px;
+    }
+    
+}
