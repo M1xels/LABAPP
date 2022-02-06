@@ -1,0 +1,365 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UITC Laboratory Monitoring</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/equipment_device.css' %} ">
+    <link rel="icon" href="{% static 'Media/TUPLOGO.png' %}">
+    <script src="{% static 'JS/Equipment_Device.js' %}"></script>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+</head>
+<body>
+
+  <div class="menu-bar">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#"><img src="TUP LOGO.png">UITC LABORATORY </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link " href="#">Equipment Device <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link van" href="PERFORM_REQUEST.html">
+                  Perform Request
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link van" href="RECORDS.html">
+                  Records
+                </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link van" href="LOG.html">Logout</a>
+            </li>
+          </ul>
+          
+        </div>
+    </nav>
+  
+    <div class="modal fade" id="modal_l1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Insert Number of Computer in Lab 1.</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <input id="numl1" type="tel" minlength="1" maxlength="2"></input>
+          </div>
+          <div class="modal-footer">
+            <button id = "m1" type="button" class="btn btn-primary" data-dismiss="modal" disabled>OK</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    </body>
+    </html>
+
+    <div class="modal fade" id="modal_l2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Insert Number of Computer in Lab 2.</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <input id="numl2" type="tel" minlength="1" maxlength="2"></input>
+          </div>
+          <div class="modal-footer">
+            <button id = "m2" type="button" class="btn btn-primary" data-dismiss="modal" disabled>OK</button>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    </body>
+    </html>
+
+    <div class="modal fade" id="modal_l3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Insert Number of Computer in Lab 3.</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <input id="numl3" type="tel" minlength="1" maxlength="2"></input>
+          </div>
+          <div class="modal-footer">
+            <button id = "m3" type="button" class="btn btn-primary" data-dismiss="modal" disabled >OK</button>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    </body>
+    </html>
+
+    <div class="modal fade" id="modal_l4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal_4">Insert Number of Computer in Lab 4.</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <input id="numl4" type="tel" minlength="1" maxlength="2"></input>
+          </div>
+          <div class="modal-footer">
+            <button id = "m4" type="button" class="btn btn-primary" data-dismiss="modal"disabled >OK</button>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    </body>
+    </html>
+  
+  </div>  
+  <div class="color-overlay"> </div>
+  <div id="pic" class="view drk ">
+    <div class="color-overlay"> </div>
+      <div class="container"><br><br>
+        <div class="accordion">
+          <div class="buttons">
+            <button class="btn" id="h1"  title="LAB 1"><img src="desktop-computer.png"> <br>Laboratory 1 </button>
+            <button class="btn" id ="h2"  data-number= "2" title="LAB 2"><img src="desktop-computer.png"> <br>Laboratory 2 </button> 
+            <button class="btn" id="h3" data-number="3" title="LAB 3"><img src="desktop-computer.png"> <br>Laboratory 3 </button>        
+            <button class="btn" id="h4" data-number="4" title="LAB 4"><img src="desktop-computer.png"> <br>Laboratory 4 </button> 
+          </div>
+          <br></br>
+          <div id="edata1">
+            <div class="table-responsive">
+              <div>
+                LABORATORY 1 <br></br>
+                <button data-toggle="modal" data-target="#modal_l1" class="btn" title="Setup">Setup</button>
+              </div> <br></br>
+              <div id="table1"> 
+                <table class="table table-striped" id="tbl_lab1">
+
+                  <thead class="thead">
+                    <tr>
+                      <th scope="col">PC no.</th>
+                      <th scope="col" id="sa1" >System Unit</th>
+                      <th scope="col" id="sa2" >Monitor</th>
+                      <th scope="col" id="sa3" >Keyboard</th>
+                      <th scope="col" id="sa4" >Mouse</th>
+                      <th scope="col" id="sa5" >AVR</th>
+                      <th scope="col" >Remarks <button id = "slct1" class="slcta" value="true"><img src="check.png" class="pic1" title="Select all"></button></th>
+    
+                    </tr>
+                  </thead>
+                  <tbody class="table-color" id="tbody1">
+                    <tr id="row_data1">
+                      <th scope="row"></th>
+                      <td> <input type="checkbox" id="cb1" class="chk"></td>
+                      <td> <input type="checkbox" id="cb2" class="chk"></td>
+                      <td> <input type="checkbox" id="cb3" class="chk"></td>
+                      <td> <input type="checkbox" id="cb4" class="chk"></td>
+                      <td> <input type="checkbox" id="cb5" class="chk"></td>
+                      <td> 
+                        <select class="form-control form-control-sm" id="options">
+                          <option value="Good">Good</option>
+                          <option value="Replace">Replace</option>
+                          <option value="On-Process">On-Process</option>
+                        </select>
+                      </td>
+                      
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td>
+                        <button type="button" class="btn btn-lg" id="s1">Save</button>
+                      </td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div id="edata2"  style="display: none">
+            <div class="table-responsive">
+              <div>
+                LABORATORY 2 <br></br>
+                <button data-toggle="modal" data-target="#modal_l2" class="btn btn-lg" title="Setup">Setup</button>
+              </div> <br></br>
+              <div id = "table2" class="lab2" data-number="2">
+                <table class="table table-striped" id="tbl_lab2">
+                  <thead class="thead">
+                    <tr>
+                      <th scope="col">PC no.</th>
+                      <th scope="col">System Unit</th>
+                      <th scope="col">Monitor</th>
+                      <th scope="col">Keyboard</th>
+                      <th scope="col">Mouse</th>
+                      <th scope="col">AVR</th>
+                      <th scope="col">Remarks <button id = "slct2" class="slcta" value="true"><img src="check.png" class="pic1" title="Select all"></button></th>
+
+                    </tr>
+                  </thead>
+                  <tbody class="table-color" id="tbody2">
+                    <tr id="row_data2">
+                      <th scope="row"></th>
+                      <td> <input type="checkbox" id="acb1"></td>
+                      <td> <input type="checkbox" id="acb2"></td>
+                      <td> <input type="checkbox" id="acb3"></td>
+                      <td> <input type="checkbox" id="acb4"></td>
+                      <td> <input type="checkbox" id="acb5"></td>
+                      <td> 
+                        <select class="form-control form-control-sm" id="options">
+                          <option value="Good">Good</option>
+                          <option value="Replace">Replace</option>
+                          <option value="On-Process">On-Process</option>
+                        </select>
+                      </td>
+                      
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td>
+                        <button type="button" class="btn btn-lg">Save</button>
+                      </td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div id="edata3"  style="display: none">
+            <div class="table-responsive">
+              <div class="lab3">
+                LABORATORY 3 <br></br>
+                <button data-toggle="modal" data-target="#modal_l3" class="btn btn-lg" title="Setup">Setup</button>
+              </div> <br></br>
+              <div id = "table3" data-number="3">
+                <table class="table table-striped" id="tbl_lab3">
+                  <thead class="thead">
+                    <tr>
+                      <th scope="col">PC no.</th>
+                      <th scope="col">System Unit</th>
+                      <th scope="col">Monitor</th>
+                      <th scope="col">Keyboard</th>
+                      <th scope="col">Mouse</th>
+                      <th scope="col">AVR</th>
+                      <th scope="col">Remarks <button id = "slct3" class="slcta"><img src="check.png" class="pic1" title="Select all"></button></th>
+
+                    </tr>
+                  </thead>
+                  <tbody class="table-color" id="tbody3">
+                    <tr id="row_data3">
+                      <th scope="row"></th>
+                      <td> <input type="checkbox" id="bcb1"></td>
+                      <td> <input type="checkbox" id="bcb2"></td>
+                      <td> <input type="checkbox" id="bcb3"></td>
+                      <td> <input type="checkbox" id="bcb4"></td>
+                      <td> <input type="checkbox" id="bcb5"></td>
+                      <td> 
+                        <select class="form-control form-control-sm" id="options">
+                          <option value="Good">Good</option>
+                          <option value="Replace">Replace</option>
+                          <option value="On-Process">On-Process</option>
+                        </select>
+                      </td>
+
+                      
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td>
+                        <button type="button" class="btn btn-lg">Save</button>
+                      </td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div id="edata4" style="display: none">
+            <div class="table-responsive">
+              <div class="lab4">
+                LABORATORY 4 <br></br>
+                <button data-toggle="modal" data-target="#modal_l4" class="btn btn-lg" title="Setup">Setup</button>
+              </div> <br></br>
+              <div id = "table4" data-number="4">
+                <table class="table table-striped" id="tbl_lab4">
+                  <thead class="thead">
+                    <tr>
+                      <th scope="col">PC no.</th>
+                      <th scope="col">System Unit</th>
+                      <th scope="col">Monitor</th>
+                      <th scope="col">Keyboard</th>
+                      <th scope="col">Mouse</th>
+                      <th scope="col">AVR</th>
+                      <th scope="col">Remarks <button id = "slct4" class="slcta"><img src="check.png" class="pic1" title="Select all"></button></th>
+
+                    </tr>
+                  </thead>
+                  <tbody class="table-color" id="tbody4">
+                    <tr id="row_data4">
+                      <th scope="row"></th>
+                      <td> <input type="checkbox" id="ccb1"></td>
+                      <td> <input type="checkbox" id="ccb2"></td>
+                      <td> <input type="checkbox" id="ccb3"></td>
+                      <td> <input type="checkbox"id="ccb4"></td>
+                      <td> <input type="checkbox" id="ccb5"></td>
+                      <td> 
+                        <select class="form-control form-control-sm" id="options">
+                          <option value="Good">Good</option>
+                          <option value="Replace">Replace</option>
+                          <option value="On-Process">On-Process</option>
+                        </select>
+                      </td>
+                      
+                      
+                      
+                    </tr>
+                  </tbody>
+                  <tfoot >
+                    <tr>
+                      <td>
+                        <button type="button" class="btn btn-lg">Save</button>
+                      </td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+          </div>
+  
+  
+        </div>
+      </div>
+  
+
+
+</body>
+</html>
