@@ -24,10 +24,39 @@ def hardware(request):
 
 def software(request):
    return render(request, 'pages/SOFTWARE.html')
-def delete(request):
-    datasr = software_reports.objects.all()
+
+def EquipmentDevice(request):
+    data = equipmentdevicel1.objects.last()
+    return render(request, 'pages/EQUIPMENT_DEVICE.html',{'data':data})
     
+   
+def performrequest(request):
+    datasr = software_reports.objects.all()
+    return render(request, 'pages/PERFORM_REQUEST.html',{'datasr':datasr})
+
+def delete(request, Pcnum):
+    datasr = software_reports.objects.get(Pcnum=Pcnum)
+    datasr.delete()
     return redirect('/performrequest')
+
+def records(request):
+    return render(request, 'pages/RECORDS.html')
+
+def equipmentdevice1(request):
+    if request.method=='POST':
+        pcnum = request.POST.get('pc_num')
+        sysunit = request.POST.get('system_unit')
+        mntr = request.POST.get('monitor')
+        kbrd = request.POST.get('kboard')
+        ms = request.POST.get('mouse')
+        Avr = request.POST.get('avr')
+        Remarks = request.POST.get('rmrks')
+        data = equipmentdevicel1.objects.create(pcnum=pcnum, systemunit=sysunit, monitor=mntr, keyboard=kbrd, mouse=ms, avr=Avr, remarks=Remarks)
+        data.save()
+        return render(request, 'pages/EQUIPMENT_DEVICE.html')
+
+
+
 
 def softwaredata(request):
     if request.method=='POST':
@@ -41,7 +70,16 @@ def softwaredata(request):
         data.save()
         return render(request, 'pages/HOMEPAGE.html')
 
-
+def reg(request):
+   if request.method == 'POST':
+      fname = request.POST.get('Fullname')
+      pswrd = request.POST.get('Pass')
+      eml = request.POST.get('email')
+      jdes = request.POST.get('jobd')
+      cnum = request.POST.get('contactnum')
+      data = register1.objects.create(Username=fname, Password=pswrd, Email=eml, Job=jdes, Contactnum=cnum)
+      data.save()
+      return render(request, 'pages/LOG.html')
 
 
 
@@ -70,3 +108,5 @@ def login(request):
 
     return render(request, 'pages/LOG.html')
  
+
+
