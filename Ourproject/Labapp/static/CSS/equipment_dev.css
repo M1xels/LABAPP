@@ -84,7 +84,7 @@ header,
 
 #pic{
     
-    background-image: url("TUP BG DARK.png");
+    background-image: url("/static/Media/TUPBGDARK.png");
     background-position: center center;
     background-repeat: no-repeat;
     -webkit-background-size:cover;
@@ -116,7 +116,7 @@ thead, tbody tr{
     
 }
 .view {
-    background: #000 url("TUP BG DARK.png");
+    background: #000 url("static/Media/TUPBGDARK.png");
     color: #fff;
     width: 100%;
     display: flex;
