@@ -41,16 +41,7 @@ def softwaredata(request):
         data.save()
         return render(request, 'pages/HOMEPAGE.html')
 
-def reg(request):
-   if request.method == 'POST':
-      fname = request.POST.get('Fullname')
-      pswrd = request.POST.get('Pass')
-      eml = request.POST.get('email')
-      jdes = request.POST.get('jobd')
-      cnum = request.POST.get('contactnum')
-      data = register1.objects.create(Username=fname, Password=pswrd, Email=eml, Job=jdes, Contactnum=cnum)
-      data.save()
-      return render(request, 'pages/LOG.html')
+
 
 
 
