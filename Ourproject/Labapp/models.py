@@ -5,6 +5,17 @@ from django.db.models import Model
 import os
 
 
+class register1(models.Model):
+    jobdes = [
+        ('Comp. Instructor', 'Comp. Instructor'),
+        ('UITC Staff', 'UITC Staff'),
+        
+        ]
+    Email = models.EmailField(max_length = 254, primary_key= True, null=False)
+    Username = models.CharField(max_length= 50, null=False)
+    Password = models.CharField(max_length = 40, null=False)
+    Job = models.CharField(max_length = 40,   choices=jobdes)
+    Contactnum = models.DecimalField(max_digits=11, decimal_places=0, default="", null=False)
 
     
     
