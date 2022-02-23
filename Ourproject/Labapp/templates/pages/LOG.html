@@ -35,7 +35,8 @@
 
                         
                         <div class="col-lg-7  text-center">
-                            <form class="login" name="log"> 
+                            <form action= '/login/' class="login" name="log" method="post"> 
+                                {%csrf_token%}
                                 <div class="form-row n ">
                                     <div class="col-lg-7 text-center">
                                         <h2 class="font-weight-bold pt-3 n " >LOGIN HERE</h3>
@@ -48,13 +49,13 @@
                                 </div>
                                 <div class="form-row ha n">
                                     <div class="col-8">
-                                        <input type="email" class="form-control my-2 p-1 ha" onkeyup="isEmpty()" placeholder="Username" name="uname" required id="uname">
+                                        <input type="email" class="form-control my-2 p-1 ha" onkeyup="isEmpty()" placeholder="Username" name="email" required id="uname">
                                        
                                     </div>
                                 </div>
                                 <div class="form-row ha n ">
                                     <div class="col-7">
-                                        <input type="password" class="form-control my-2 p-1 ha" onkeyup="isEmpty()" placeholder="Password" name="upass" required id="upass">
+                                        <input type="password" class="form-control my-2 p-1 ha" onkeyup="isEmpty()" placeholder="Password" name="password" required id="upass">
                                         
                                     </div>
                                     <div class="col-1">
@@ -64,7 +65,7 @@
                                 </div>
                                 <div class="form-row n">
                                     <div class="col-lg-7">
-                                        <button type="button" class="btn" id="log" onclick="validate ()" disabled >Login</button>
+                                        <button type="submit" class="btn" id="log" >Login</button>
                                         
                                         
                                 <div class="form-row n">

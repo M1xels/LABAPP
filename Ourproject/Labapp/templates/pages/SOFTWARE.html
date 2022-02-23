@@ -96,7 +96,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="cancel2()">Cancel</button>
-            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="submit()">Yes</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" >Yes</button>
           </div>
         </div>
       </div>
@@ -117,13 +117,15 @@
         </div>
         <div class="card-body ">
           <div class="card-title">
-            <form>
+
+            <form method="post" action="/softwaredata/">
+              {%csrf_token%}
               <div class="form-row">
                   <div class="col-5 p-1">
-                    <input type="text" class="form-control" placeholder="Input Name" id="name1"> 
+                    <input type="text" class="form-control" placeholder="Input Name" id="name1" name="Username" required> 
                   </div>
                   <div class="col-2 p-1">
-                    <select class="form-control form-control-sm " id="list1" value="Select type of letter" onChange="number_function (this.value, this.defaultValue)" > 
+                    <select class="form-control form-control-sm " id="list1" value="Select type of letter" onChange="number_function (this.value, this.defaultValue)" name="TypeofConcern" required > 
                       <option value="default">Select type of letter</option>
                       <option>Request</option>
                       <option>Complain</option>
@@ -133,7 +135,7 @@
                   </div>
                   
                   <div class="col-2 p-1">
-                    <select class="form-control form-control-sm " id="list2">
+                    <select class="form-control form-control-sm " id="list2" name="Labnum" required>
                       <option value="default">Laboratory #</option>
                       <option>Laboratory 1</option>
                       <option>Laboratory 2</option>
@@ -143,29 +145,31 @@
                   </div>
                   
                   <div class="col-1 p-1">
-                    <input type="number" min="0" max="50" class="form-control" placeholder="PC #" id="PCnum">
+                    <input type="number" min="0" max="50" class="form-control" placeholder="PC #" id="PCnum" name="Pcnum" required>
                   </div>
                   
                 
-              </div> 
-            </form>
-              
-          </div>
-          <div class="form-floating">
-            <textarea class="form-control"  placeholder="Leave a comment here" rows="10" id="textarea1" style="height: 350px" ></textarea>
+              </div>
+              <div class="form-floating">
+            <textarea class="form-control"  placeholder="Leave a comment here" rows="10" id="textarea1" style="height: 350px" name="Message" required></textarea>
             <label for="floatingTextarea2">Comments</label>
           </div>
           <p class="card-text">Check it properly before you send it.</p>
+           
+              <button type="button" class="btn btn-primary hah m" onclick="submit()" >
+                Submit Report
+              </button>
+              <button type="button" class="btn btn-danger hah m"  onclick="cancel1()">
+                Cancel
+              </button> 
+            </form>
+              
+          </div>
           
 
 <!------------------------------------------------------------------------------------SECOND MODAL BUTTONS PART----------------------------------------------------------------------------------------------------------->
 
-          <button type="button" class="btn btn-primary hah m" data-toggle="modal" data-target="#dom">
-            Submit Report
-          </button>
-          <button type="button" class="btn btn-danger hah m"  onclick="cancel1()">
-            Cancel
-          </button>
+         
         </div>
       </div> 
     </div> 
